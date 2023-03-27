@@ -37,7 +37,13 @@ const SelectComp: FC<ISelectCompProps> = ({
               </option>
             ))}
           </select>
-          <button type="submit">Enter</button>
+          <button
+            type="submit"
+            disabled={!selectedMonth}
+            className={`${!selectedMonth ? "disabled" : ""}`}
+          >
+            Enter
+          </button>
         </form>
       </div>
       <RaceTitleList enteredMonthNumber={enteredMonthNumber} />

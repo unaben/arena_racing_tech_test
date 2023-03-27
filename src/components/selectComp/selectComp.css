@@ -25,3 +25,7 @@
   border-radius: 0.2rem;
   font-weight: 600;
 }
+
+.form-container .disabled {
+  background-color: #696969;
+}

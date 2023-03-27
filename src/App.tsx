@@ -10,9 +10,9 @@ import { IRacingData } from "./components/model/localization";
 
 const App: FC = () => {
   const [enteredMonthNumber, setEnteredMonthNumber] = useState<string>("");
-   const [eventDetails, setEventDetails] = useState<IRacingData | undefined>();
-  const { eventData } = useFetch(enteredMonthNumber);  
- 
+  const [eventDetails, setEventDetails] = useState<IRacingData | undefined>();
+  const { eventData } = useFetch(enteredMonthNumber);
+
   const router = createBrowserRouter([
     {
       path: "/",
