@@ -1,0 +1,55 @@
+.main-container .wrapper {
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  background: var(--clr-card-background);
+}
+
+.main-container .text-wrapper {
+  padding: 0.5em;
+}
+
+.main-container .text-wrapper h2,
+p {
+  text-align: center;
+}
+
+.main-container .frame {
+  border: var(--clr-border);
+  min-height: 55vh;
+  width: 30vw;
+  overflow: hidden;
+  margin: 0.8rem;
+  box-shadow: var(--clr-shadow);
+}
+
+.main-container .image-wrapper img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.main-container .main-btn-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding-bottom: 1em;
+}
+
+.main-container .main-btn-container button {
+  background: var(--clr-info);
+  border: none;
+
+  padding: 0.8em;
+  margin-right: 0.5rem;
+  border-radius: 0.2rem;
+  font-weight: 600;
+}
+
+.main-container .main-btn-container button a {
+  color: var(--clr-btn-text);
+  text-decoration: var(--clr-text-decoration);
+}

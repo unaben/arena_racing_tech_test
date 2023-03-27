@@ -1,0 +1,22 @@
+.exhibition-list-container {
+  margin-top: 1rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.exhibition-list-container .title {
+  text-align: center;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.exhibition-list-container .title-container {
+  max-width: 300px;
+  border: var(--clr-border);
+  min-height: 40vh;
+  box-shadow: var(--clr-shadow);
+  border-radius: 0.5rem;
+  background: var(--clr-card-background);
+  padding: 2em ;
+  line-height: 2;
+}

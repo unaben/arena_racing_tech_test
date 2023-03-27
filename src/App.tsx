@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState, FC } from "react";
+import "./App.css";
+import Details from "./components/details/Details";
+import Header from "./components/header/Header";
+import RaceList from "./components/RaceList/RaceList";
+import SelectComp from "./components/selectComp/SelectComp";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import useFetch from "./components/hook/useFetch";
+import { IRacingData } from "./components/model/localization";
 
-function App() {
+const App: FC = () => {
+  const [enteredMonthNumber, setEnteredMonthNumber] = useState<string>("");
+   const [eventDetails, setEventDetails] = useState<IRacingData | undefined>();
+  const { eventData } = useFetch(enteredMonthNumber);  
+ 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <RaceList eventData={eventData} setEventDetails={setEventDetails} />
+      ),
+    },
+    {
+      path: "/details/:id",
+      element: <Details eventDetails={eventDetails} />,
+    },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="container">
+      <header>
+        <Header />
       </header>
+      <div className="sub-container">
+        <aside>
+          <SelectComp
+            setEnteredMonthNumber={setEnteredMonthNumber}
+            enteredMonthNumber={enteredMonthNumber}
+          />
+        </aside>
+        <main>
+          <RouterProvider router={router} />
+        </main>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
